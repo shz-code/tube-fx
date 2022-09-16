@@ -2,15 +2,23 @@ import { Stack } from "@mui/material";
 import React from "react";
 import { categories } from "../utils/lib";
 
-export default function SideBar({ themeProps }) {
-  const selectedCategory = "New";
+export default function SideBar({
+  themeProps,
+  selectedCategory,
+  SetselectedCategory,
+}) {
   return (
-    <Stack>
+    <Stack
+      sx={{
+        flexDirection: { xs: "row", md: "column" },
+      }}
+    >
       {categories.map((e) => (
         <button
           className="category_btn"
           style={{ background: e.name === selectedCategory && "red" }}
           key={e.name}
+          onClick={() => SetselectedCategory(e.name)}
         >
           <span
             style={{

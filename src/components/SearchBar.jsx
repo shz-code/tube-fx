@@ -14,7 +14,7 @@ export default function SearchBar() {
       sx={{
         borderRadius: "20px",
         border: "1px solid #e3e3e3",
-        pl: 2,
+        pl: { xs: 1, sm: 2 },
         boxShadow: "none",
         mr: { sm: 5 },
       }}

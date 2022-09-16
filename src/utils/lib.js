@@ -14,7 +14,7 @@ import TheaterComedyIcon from "@mui/icons-material/TheaterComedy";
 
 export const categories = [
   { name: "New", icon: <HomeIcon /> },
-  { name: "JS Mastery", icon: <CodeIcon /> },
+  { name: "Siedd", icon: <MusicNoteIcon /> },
   { name: "Coding", icon: <CodeIcon /> },
   { name: "ReactJS", icon: <CodeIcon /> },
   { name: "NextJS", icon: <CodeIcon /> },
@@ -32,11 +32,12 @@ export const categories = [
   { name: "Crypto", icon: <DeveloperModeIcon /> },
 ];
 
-export const demoThumbnailUrl = "https://i.ibb.co/G2L2Gwp/API-Course.png";
-export const demoChannelUrl = "/channel/UCmXmlB4-HJytD7wek0Uo97A";
-export const demoVideoUrl = "/video/GDa8kZLNhJ4";
-export const demoChannelTitle = "JavaScript Mastery";
+export const demoThumbnailUrl =
+  "https://images.unsplash.com/photo-1663287695452-bf59337d8746?auto=format&fit=crop&w=1170&q=80";
+export const demoChannelUrl = "/channel/UC9Jrzve0dhPoo_LexakSFMw";
+export const demoVideoUrl = "/video/zdtHCSvTrp0";
+export const demoChannelTitle = "Siedd";
 export const demoVideoTitle =
-  "Build and Deploy 5 JavaScript & React API Projects in 10 Hours - Full Course | RapidAPI";
+  "Siedd - Losing My Mind [Official Nasheed Video] | Vocals Only";
 export const demoProfilePicture =
-  "http://dergipark.org.tr/assets/app/images/buddy_sample.png";
+  "https://yt3.ggpht.com/S07NWoiPpR-_1x-Mhymdyiy7Au0PP2MVPMLQ6HqOxDJ17EEz_edxsjh8Uud4rmE-UWKb5a2Ql1c=s88-c-k-c0x00ffffff-no-rj";

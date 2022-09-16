@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 :root {
     --theme-color: #C21010;
     --theme-bg: "#000";
@@ -8,6 +10,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 a {
@@ -38,7 +41,13 @@ a {
 .search-bar {
     border: none;
     outline: none;
-    width: 350px;
+    width: 150px;
+}
+
+@media screen and (min-width: 600px) {
+    .search-bar {
+        width: 350px;
+    }
 }
 
 .category_btn {
@@ -68,7 +77,7 @@ a {
 }
 
 @media screen and (max-width: 900px) {
-    .category-btn {
+    .category_btn {
         margin: 10px;
     }
 }
@@ -86,9 +95,5 @@ a {
 
     .react-player {
         height: 45vh !important;
-    }
-
-    .search-bar {
-        width: 200px;
     }
 }
