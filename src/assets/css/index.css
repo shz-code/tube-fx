@@ -1,5 +1,10 @@
-html,
-body {
+:root {
+    --theme-color: #C21010;
+    --theme-bg: "#000";
+    --text-color: "#fff";
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -25,15 +30,6 @@ a {
     background-color: transparent;
 }
 
-.category-btn:hover {
-    background-color: #FC1503 !important;
-    color: white !important;
-}
-
-.category-btn:hover span {
-    color: white !important;
-}
-
 .react-player {
     height: 77vh !important;
     width: 100% !important;
@@ -45,21 +41,30 @@ a {
     width: 350px;
 }
 
-.category-btn {
-    font-weight: bold !important;
+.category_btn {
+    font-weight: bold;
     text-transform: capitalize;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
     cursor: pointer;
     background: transparent;
     outline: none;
     border: none;
-
+    color: var(--text-color);
+    column-gap: 0.5rem;
     padding: 7px 15px;
     margin: 10px 0px;
     border-radius: 20px;
     transition: all 0.3s ease;
+}
+
+.category_btn:hover {
+    background: var(--theme-color);
+    color: var(--text-color) !important;
+}
+
+.category_btn:hover span {
+    color: var(--text-color) !important;
 }
 
 @media screen and (max-width: 900px) {

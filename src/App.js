@@ -13,7 +13,7 @@ import {
 
 function App() {
   const [theme, Settheme] = useState({
-    themeColor: "red",
+    themeColor: "#C21010",
     themeBg: "#000",
     textColor: "#fff",
   });
