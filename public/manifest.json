@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Tube Fx",
+  "name": "YouTube clone using rapid api.",
   "icons": [
     {
       "src": "favicon.ico",

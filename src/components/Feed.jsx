@@ -12,13 +12,15 @@ export default function Feed() {
 
   const [selectedCategory, SetselectedCategory] = useState("New");
   const [videos, Setvideos] = useState([]);
+  const [loading, Setloading] = useState(false);
 
   useEffect(() => {
-    fetchApi(`search?part=snippet&q=${selectedCategory}`).then((data) =>
-      Setvideos(data.items)
-    );
+    Setloading(true);
+    fetchApi(`search?part=snippet&q=${selectedCategory}`).then((data) => {
+      Setvideos(data.items);
+      Setloading(false);
+    });
   }, [selectedCategory]);
-
   return (
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
       <Box
@@ -43,7 +45,7 @@ export default function Feed() {
           {selectedCategory}{" "}
           <span style={{ color: `${themeProps.themeColor}` }}>Videos</span>
         </Typography>
-        <Videos videos={videos} />
+        {loading ? <p>Loading</p> : <Videos videos={videos} />}
       </Box>
     </Stack>
   );

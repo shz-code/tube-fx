@@ -3,24 +3,27 @@ import CodeIcon from "@mui/icons-material/Code";
 import DeveloperModeIcon from "@mui/icons-material/DeveloperMode";
 import FaceRetouchingNaturalIcon from "@mui/icons-material/FaceRetouchingNatural";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
-import GraphicEqIcon from "@mui/icons-material/GraphicEq";
+import FlagIcon from "@mui/icons-material/Flag";
 import HomeIcon from "@mui/icons-material/Home";
 import LiveTvIcon from "@mui/icons-material/LiveTv";
 import MusicNoteIcon from "@mui/icons-material/MusicNote";
 import OndemandVideoIcon from "@mui/icons-material/OndemandVideo";
 import SchoolIcon from "@mui/icons-material/School";
+import SportsCricketIcon from "@mui/icons-material/SportsCricket";
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import TheaterComedyIcon from "@mui/icons-material/TheaterComedy";
+import WhatshotIcon from "@mui/icons-material/Whatshot";
 
 export const categories = [
   { name: "New", icon: <HomeIcon /> },
+  { name: "Hot", icon: <WhatshotIcon /> },
   { name: "Siedd", icon: <MusicNoteIcon /> },
   { name: "Coding", icon: <CodeIcon /> },
-  { name: "ReactJS", icon: <CodeIcon /> },
-  { name: "NextJS", icon: <CodeIcon /> },
+  { name: "World News", icon: <FlagIcon /> },
+  { name: "VS Code", icon: <CodeIcon /> },
   { name: "Music", icon: <MusicNoteIcon /> },
   { name: "Education", icon: <SchoolIcon /> },
-  { name: "Podcast", icon: <GraphicEqIcon /> },
+  { name: "Cricket", icon: <SportsCricketIcon /> },
   { name: "Movie", icon: <OndemandVideoIcon /> },
   { name: "Gaming", icon: <SportsEsportsIcon /> },
   { name: "Live", icon: <LiveTvIcon /> },

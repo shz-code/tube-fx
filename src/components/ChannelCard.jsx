@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { demoProfilePicture } from "../utils/lib";
 import themeContext from "../utils/themeContext";
 
-export default function ChannelCard({ channel }) {
+export default function ChannelCard({ channel, marginTop, marginBotton }) {
   const theme = useContext(themeContext);
   const { themeColor } = theme.theme;
   return (
@@ -17,8 +17,9 @@ export default function ChannelCard({ channel }) {
         justifyContent: "center",
         alignItems: "center",
         width: { xs: "356px", md: "320px" },
-        height: "326px",
         margin: "auto",
+        marginTop,
+        marginBotton,
       }}
     >
       <Link to={`/channel/${channel?.id?.channelId}`}>
@@ -27,6 +28,7 @@ export default function ChannelCard({ channel }) {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
+            alignItems: "center",
             textAlign: "center",
             color: "#fff",
           }}
@@ -58,8 +60,11 @@ export default function ChannelCard({ channel }) {
                 channel?.statistics?.subscriberCount,
                 10
               ).toLocaleString("en-US")}
-              Subscribers
+              &nbsp;Subscribers
             </Typography>
+          )}
+          {channel?.snippet?.description && (
+            <Typography>{channel?.snippet?.description}</Typography>
           )}
         </CardContent>
       </Link>

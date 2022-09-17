@@ -1,6 +1,7 @@
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
+import styles from "../assets/css/VideoCard.module.css";
 import {
   demoChannelTitle,
   demoChannelUrl,
@@ -36,9 +37,15 @@ export default function VideoCard({
         </Link>
         <CardContent sx={{ backgroundColor: "#1E1E1E", height: "106px" }}>
           <Link to={videoId ? `/video/${videoId}` : `/video/${demoVideoUrl}`}>
-            <Typography variant="subtitle1" fontWeight="bold" color="#FFF">
-              {snippet?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}
-            </Typography>
+            {snippet?.title.length > 60 ? (
+              <Typography variant="subtitle1" fontWeight="bold" color="#FFF">
+                {snippet?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}...
+              </Typography>
+            ) : (
+              <Typography variant="subtitle1" fontWeight="bold" color="#FFF">
+                {snippet?.title || demoVideoTitle}
+              </Typography>
+            )}
           </Link>
           <Link
             to={
@@ -48,7 +55,9 @@ export default function VideoCard({
             }
           >
             <Typography variant="subtitle2" color="gray">
-              {snippet?.channelTitle || demoChannelTitle}
+              <span className={styles.channel_title}>
+                {snippet?.channelTitle || demoChannelTitle}{" "}
+              </span>
             </Typography>
           </Link>
         </CardContent>
