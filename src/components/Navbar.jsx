@@ -55,14 +55,12 @@ export default function Navbar() {
         <Logo className="logo" fill={themeColor} />
       </Link>
       <SearchBar />
-      <IconButton sx={{ color: `${textColor}` }}>
-        <div onClick={handleThemeChng}>
-          {darkIcon ? (
-            <ToggleOnIcon sx={{ fontSize: "2rem" }} />
-          ) : (
-            <ToggleOffIcon sx={{ fontSize: "2rem" }} />
-          )}
-        </div>
+      <IconButton sx={{ color: `${textColor}` }} onClick={handleThemeChng}>
+        {darkIcon ? (
+          <ToggleOnIcon sx={{ fontSize: "2rem" }} />
+        ) : (
+          <ToggleOffIcon sx={{ fontSize: "2rem" }} />
+        )}
       </IconButton>
     </Stack>
   );
