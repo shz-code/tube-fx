@@ -16,7 +16,10 @@ export default function SideBar({
       {categories.map((e) => (
         <button
           className="category_btn"
-          style={{ background: e.name === selectedCategory && "red" }}
+          style={{
+            background:
+              e.name === selectedCategory && `${themeProps.themeColor}`,
+          }}
           key={e.name}
           onClick={() => SetselectedCategory(e.name)}
         >

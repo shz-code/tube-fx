@@ -3,7 +3,6 @@ import React from "react";
 import { ChannelCard, VideoCard } from "./";
 
 export default function Videos({ videos }) {
-  // console.log(videos);
   return (
     <Stack
       direction="row"

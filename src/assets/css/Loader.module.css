@@ -1,0 +1,28 @@
+.loader {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.svg_loader {
+    background: "none";
+    display: "block";
+    shape-rendering: "auto";
+    width: 200px;
+    height: 200px;
+}
+
+@media screen and (max-width: 600px) {
+    .loader {
+        font-size: 1rem;
+        margin-top: 50px;
+    }
+
+    .svg_loader {
+        width: 100px;
+        height: 100px;
+    }
+}

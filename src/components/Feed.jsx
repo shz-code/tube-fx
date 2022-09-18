@@ -4,7 +4,7 @@ import themeContext from "../utils/themeContext";
 
 import { useEffect, useState } from "react";
 import fetchApi from "../utils/fetchApi";
-import { SideBar, Videos } from "./";
+import { Loader, SideBar, Videos } from "./";
 
 export default function Feed() {
   const theme = useContext(themeContext);
@@ -25,7 +25,7 @@ export default function Feed() {
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
       <Box
         sx={{
-          height: { xs: "auto", md: "92vh" },
+          height: { xs: "auto", md: "90.3vh" },
           overflow: "scroll",
           borderRight: "1px solid #ededed",
           px: { xs: 0, md: 2 },
@@ -37,15 +37,25 @@ export default function Feed() {
           SetselectedCategory={SetselectedCategory}
         />
         <Typography sx={{ display: { xs: "none", md: "block" } }}>
-          Copyright @by shz-code
+          <span>
+            {" "}
+            Developed by{" "}
+            <a
+              href="https://github.com/shz-code/"
+              style={{ color: `${themeProps.themeColor}` }}
+            >
+              {" "}
+              @shz-code{" "}
+            </a>
+          </span>
         </Typography>
       </Box>
-      <Box p={2} sx={{ flex: 2, height: "92vh", overflowY: "scroll" }}>
+      <Box p={2} sx={{ flex: 2, height: "90.3vh", overflowY: "scroll" }}>
         <Typography variant="h4" mb={2}>
           {selectedCategory}{" "}
           <span style={{ color: `${themeProps.themeColor}` }}>Videos</span>
         </Typography>
-        {loading ? <p>Loading</p> : <Videos videos={videos} />}
+        {loading ? <Loader /> : <Videos videos={videos} />}
       </Box>
     </Stack>
   );

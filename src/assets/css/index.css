@@ -13,6 +13,11 @@
     font-family: 'Poppins', sans-serif;
 }
 
+body.light-theme {
+    --theme-bg: "#fff";
+    --text-color: "#000";
+}
+
 a {
     text-decoration: none;
     color: black;
@@ -41,10 +46,16 @@ a {
 .search-bar {
     border: none;
     outline: none;
-    width: 150px;
+    width: 100px;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 400px) {
+    .search-bar {
+        width: 150px;
+    }
+}
+
+@media screen and (min-width: 670px) {
     .search-bar {
         width: 350px;
     }

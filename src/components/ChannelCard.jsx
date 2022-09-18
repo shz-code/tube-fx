@@ -7,7 +7,7 @@ import themeContext from "../utils/themeContext";
 
 export default function ChannelCard({ channel, marginTop, marginBotton }) {
   const theme = useContext(themeContext);
-  const { themeColor } = theme.theme;
+  const { themeColor, textColor } = theme.theme;
   return (
     <Box
       sx={{
@@ -64,7 +64,9 @@ export default function ChannelCard({ channel, marginTop, marginBotton }) {
             </Typography>
           )}
           {channel?.snippet?.description && (
-            <Typography>{channel?.snippet?.description}</Typography>
+            <Typography color={textColor}>
+              {channel?.snippet?.description}
+            </Typography>
           )}
         </CardContent>
       </Link>

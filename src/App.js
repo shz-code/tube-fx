@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import themeContext from "./utils/themeContext.js";
 
@@ -17,10 +17,30 @@ function App() {
     themeBg: "#000",
     textColor: "#fff",
   });
+  const [darkIcon, SetdarkIcon] = useState();
+
+  useEffect(() => {
+    if (localStorage.getItem("tube-fx-theme") === null)
+      localStorage.setItem("tube-fx-theme", "dark");
+    const themeFromLs = localStorage.getItem("tube-fx-theme");
+
+    themeFromLs === "dark"
+      ? Settheme({ themeColor: "#C21010", themeBg: "#000", textColor: "#fff" })
+      : Settheme({ themeColor: "#C21010", themeBg: "#fff", textColor: "#000" });
+
+    themeFromLs === "dark" ? SetdarkIcon(true) : SetdarkIcon(false);
+  }, []);
 
   return (
     <Router>
-      <themeContext.Provider value={{ theme: theme, Settheme: Settheme }}>
+      <themeContext.Provider
+        value={{
+          theme: theme,
+          Settheme: Settheme,
+          darkIcon: darkIcon,
+          SetdarkIcon: SetdarkIcon,
+        }}
+      >
         <Box
           sx={{
             backgroundColor: `${theme.themeBg}`,
@@ -32,7 +52,7 @@ function App() {
             <Route exact path="/" element={<Feed />} />
             <Route exact path="/video/:id" element={<VideoDetails />} />
             <Route exact path="/channel/:id" element={<ChannelDetails />} />
-            <Route exact path="/search/:searchTerm" element={<SearchFeed />} />
+            <Route exact path="/search/:search" element={<SearchFeed />} />
           </Routes>
         </Box>
       </themeContext.Provider>
