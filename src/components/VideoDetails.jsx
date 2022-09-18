@@ -1,9 +1,10 @@
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { Box, Stack, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import { Link, useParams } from "react-router-dom";
 import fetchApi from "../utils/fetchApi";
+import themeContext from "../utils/themeContext";
 import { Loader, Videos } from "./";
 
 export default function VideoDetails() {
@@ -12,6 +13,8 @@ export default function VideoDetails() {
   const [loadingvid, Setloadingvid] = useState(false);
   const [loadingvids, Setloadingvids] = useState(false);
   const { id } = useParams();
+  const theme = useContext(themeContext);
+  const { textColor } = theme.theme;
 
   useEffect(() => {
     Setloadingvid(true);
@@ -33,9 +36,8 @@ export default function VideoDetails() {
     <Box>
       <Stack direction={{ xs: "column", md: "row" }}>
         <Box
-          flex={3}
+          flex={2}
           sx={{
-            background: "red",
             height: "92vh",
             overflowY: "scroll",
           }}
@@ -49,20 +51,25 @@ export default function VideoDetails() {
                 className="react-player"
                 controls
               />
-              <Typography color="#fff" variant="h5" fontWeight="bold" p={2}>
+              <Typography
+                sx={{ color: `${textColor}` }}
+                variant="h5"
+                fontWeight="bold"
+                p={2}
+              >
                 {video?.snippet?.title}
               </Typography>
               <Stack
                 direction="row"
                 justifyContent="space-between"
-                sx={{ color: "#fff" }}
+                sx={{ color: `${textColor}` }}
                 py={1}
                 px={2}
               >
                 <Link to={`/channel/${video?.snippet?.channelId}`}>
                   <Typography
                     variant={{ sm: "subtitle1", md: "h6" }}
-                    color="#fff"
+                    sx={{ color: `${textColor}` }}
                   >
                     {video?.snippet?.channelTitle}
                     <CheckCircleIcon
@@ -70,20 +77,28 @@ export default function VideoDetails() {
                     />
                   </Typography>
                 </Link>
-                <Stack direction="row" gap="20px" alignItems="center" flex={1}>
-                  <Typography variant="body1" sx={{ opacity: 0.7 }}>
-                    {parseInt(
-                      video?.snippet?.statistics?.viewCount
-                    ).toLocaleString()}{" "}
+                <Stack
+                  px={2}
+                  direction="row"
+                  gap="20px"
+                  alignItems="center"
+                  flex={1}
+                  sx={{ color: `${textColor}` }}
+                >
+                  <Typography sx={{ opacity: 0.7 }}>
+                    {parseInt(video?.statistics?.viewCount).toLocaleString()}{" "}
                     views
                   </Typography>
-                  <Typography variant="body1" sx={{ opacity: 0.7 }}>
-                    {parseInt(
-                      video?.snippet?.statistics?.likeCount
-                    ).toLocaleString()}{" "}
+                  <Typography sx={{ opacity: 0.7 }}>
+                    {parseInt(video?.statistics?.likeCount).toLocaleString()}{" "}
                     likes
                   </Typography>
                 </Stack>
+              </Stack>
+              <Stack px={2} pb={2}>
+                <Typography sx={{ textAlign: "justify" }}>
+                  {video?.snippet?.description}
+                </Typography>
               </Stack>
             </Box>
           )}

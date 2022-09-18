@@ -15,9 +15,9 @@ export default function ChannelDetails() {
       Setchannel(data?.items[0])
     );
 
-    fetchApi(`search?channelId=${id}&part=snippet%2Cid&order=date`).then(
-      (data) => Setvideos(data?.items)
-    );
+    fetchApi(
+      `search?channelId=${id}&part=snippet%2Cid&order=date&type=video`
+    ).then((data) => Setvideos(data?.items));
   }, [id]);
 
   return (
