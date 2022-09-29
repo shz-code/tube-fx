@@ -25,7 +25,7 @@ export default function Feed() {
     <Stack sx={{ flexDirection: { sx: "column", md: "row" } }}>
       <Box
         sx={{
-          height: { xs: "auto", md: "90.3vh" },
+          height: { xs: "auto", md: "92vh" },
           overflow: "scroll",
           borderRight: "1px solid #ededed",
           px: { xs: 0, md: 2 },
