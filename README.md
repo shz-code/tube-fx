@@ -55,7 +55,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd tube-f
+  cd tube-fx
 ```
 
 Install dependencies
